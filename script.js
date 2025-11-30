@@ -1,7 +1,7 @@
 //Ensure HTML is already loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Load task
-  loadTask();
+  loadTasks();
 
   //Get all element
   const addButton = document.getElementById("add-task-btn");
@@ -65,7 +65,7 @@ function addTask(task, save = true) {
   }
 }
 
-function loadTask() {
+function loadTasks() {
   //Check for stored task
   const storedTask = JSON.parse(localStorage.getItem("task")) || [];
   //Display stored task
