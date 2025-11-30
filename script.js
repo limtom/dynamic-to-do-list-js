@@ -57,19 +57,19 @@ function addTask(task, save = true) {
 
   if (save) {
     //Get the stored task from local storage
-    const storedTask = JSON.parse(localStorage.getItem("task")) || [];
-    storedTask.push(taskText);
+    const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    storedTasks.push(taskText);
 
     //Save to local storage
-    localStorage.setItem("task", JSON.stringify(storedTask));
+    localStorage.setItem("tasks", JSON.stringify(storedTasks));
   }
 }
 
 function loadTasks() {
   //Check for stored task
-  const storedTask = JSON.parse(localStorage.getItem("task")) || [];
+  const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
   //Display stored task
-  storedTask.forEach(function (task) {
+  storedTasks.forEach(function (task) {
     addTask(task, false);
   });
 }
